@@ -14,6 +14,6 @@ export default class Seat extends Block {
   }
 
   toString() {
-    return `|${this.occupant ? occupat.toString() : "_"}|`;
+    return `|${this.occupant ? this.occupant.toString() : "_"}|`;
   }
 }
