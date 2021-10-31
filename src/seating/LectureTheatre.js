@@ -38,4 +38,17 @@ export default class LectureTheatre {
       .map((row) => row.map((obj) => obj.toString()).join(" "))
       .join("\n");
   }
+
+  allocate(people) {
+    for (let row of this.grid) {
+      for (let block of row) {
+        if (block.setOccupant) {
+          const seat = block;
+          const index = Math.floor(Math.random() * people.length);
+          seat.setOccupant(people[index]);
+          people.splice(index, 1);
+        }
+      }
+    }
+  }
 }
